@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { CvEntry } from '../../models/cv-entry.model';
 
 @Component({
   selector: 'app-cv-entry',
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './cv-entry.component.scss'
 })
 export class CvEntryComponent {
-
+  @Input() entry!: CvEntry;
 }

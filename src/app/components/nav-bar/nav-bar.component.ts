@@ -1,5 +1,5 @@
-import { Component, OnInit, signal } from '@angular/core';
-import { NavItem } from '../../models/nav-item.model';
+import { Component, inject } from '@angular/core';
+import { CvEntryService } from '../../services/cv-entry.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -7,17 +7,7 @@ import { NavItem } from '../../models/nav-item.model';
   templateUrl: './nav-bar.component.html',
   styleUrl: './nav-bar.component.scss'
 })
-export class NavBarComponent implements OnInit{
-  items = signal<Array<NavItem>>([]);
-
-  ngOnInit() {
-    this.items.set([
-      {title: 'Contact'}, 
-      {title: 'Work Experience'}, 
-      {title: 'Skills'}, 
-      {title: 'Education'}, 
-      {title: 'Awards'}, 
-      {title: 'Hobbies'}
-    ]);
-  }
+export class NavBarComponent {
+  cvEntryService = inject(CvEntryService);
+  items = this.cvEntryService.entries; //todo: replace with computed titles.
 }
