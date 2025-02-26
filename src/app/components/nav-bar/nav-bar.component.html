@@ -1,7 +1,7 @@
 <div>
     <ul>
-        @for (item of items(); track item.title) {
-            <li>{{ item.title }}</li>
+        @for (item of items(); track item.id) {
+            <li (click)="scrollToElement(item.id)">{{ item.title }}</li>
         }
     </ul>
 </div>

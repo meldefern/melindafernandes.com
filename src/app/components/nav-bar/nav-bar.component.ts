@@ -10,4 +10,8 @@ import { CvEntryService } from '../../services/cv-entry.service';
 export class NavBarComponent {
   cvEntryService = inject(CvEntryService);
   items = this.cvEntryService.entries; //todo: replace with computed titles.
+
+  scrollToElement(elementId: string){
+    (document.getElementById(elementId) as HTMLElement).scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+  }
 }

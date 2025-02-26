@@ -6,11 +6,10 @@ import { CvEntry } from '../models/cv-entry.model';
 })
 export class CvEntryService {
   entries = signal<Array<CvEntry>>([
-    {title: 'Contact', body: ''}, 
-    {title: 'Work Experience', body: ''}, 
-    {title: 'Skills', body: ''}, 
-    {title: 'Education', body: ''}, 
-    {title: 'Awards', body: ''}, 
-    {title: 'Hobbies', body: ''}
+    {id: 'entry-0', title: 'Contact', body: ''}, 
+    {id: 'entry-1', title: 'Work Experience', body: ''}, 
+    {id: 'entry-2', title: 'Skills', body: ''}, 
+    {id: 'entry-3', title: 'Education', body: ''}, 
+    {id: 'entry-4', title: 'Awards', body: ''}, 
   ]);
 }
